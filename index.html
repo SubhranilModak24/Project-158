@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Virtual Posters</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+  <script src="./js/poster.js"></script>
+  <script src="./js/cursorEvent.js"></script>
+
+</head>
+
+<body>
+  <a-scene id="main-scene">
+
+    <a-plane id="main-plane" position="0 240 -30" color="#90caf9" height="500" width="1500">
+      <a-plane id="subsidiary-plane" position="0 -500 0" color="#88a4b1" height="500" width="1500">
+      </a-plane>
+    </a-plane>
+
+    <a-entity id="app-title" position="0 2.3 -1"
+      text="font:exo2bold;align:center;width:2;color:#000;value:Virtual Manga Store !"></a-entity>
+
+    <a-entity id="app-subtitle" position="0 2.18 -1"
+      text="font:dejavu;align:center;width:1;color:#0F184E;value:Get Your Favourite Manga"></a-entity>
+
+    <a-entity id="manga-container" poster cursor-listener></a-entity>
+
+    <a-camera id="camera" wasd-controls="enabled:false">
+      <a-entity
+      id="camera-cursor"
+      cursor
+      position="0 0 -3"
+      geometry="primitive:ring;radiusInner:0.08;radiusOuter:0.12"
+      material="color:#ff4500;shader:flat"  
+      ></a-entity>
+    </a-camera>
+
+  </a-scene>
+</body>
+
+</html>
